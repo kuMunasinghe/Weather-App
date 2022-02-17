@@ -6,7 +6,7 @@ body{
     margin:0;
     background-color: black;
     font-family: 'Open Sans', sans-serif;
-    background-image: url(./img/Rainy_weather_2560x1600.jpg);
+    background-image: url(https://source.unsplash.com/random/1600x900/?landscape);
     font-size: 120%;
 }
 
