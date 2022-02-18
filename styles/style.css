@@ -76,3 +76,10 @@ h1.temp{
     top: 0;
     left:2em;
 }
+
+.footer{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    font-size: 0.9em;
+}
