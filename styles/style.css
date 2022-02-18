@@ -49,4 +49,30 @@ input.search-bar{
 
 h1.temp{
     margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.description{
+    text-transform: capitalize;
+    margin: left 0.3em;;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+.weather.loading{
+    visibility: hidden;
+    position: relative;
+    max-height: 2em;
+   
+}
+
+.weather.loading:after{
+    
+    visibility: visible;
+    content: "🕐....";
+    position: absolute;
+    top: 0;
+    left:2em;
 }
