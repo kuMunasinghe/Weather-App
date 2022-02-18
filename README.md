@@ -7,7 +7,7 @@
 
 This simple weather build using <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> , <img src="https://user-images.githubusercontent.com/69706145/154615612-67e28495-2add-4763-acb8-f1cccd4727a7.png" height="30px" width="auto"> API.
 
-The background changes relatively location by using  Unsplash (<img src="https://user-images.githubusercontent.com/69706145/154615951-586230e4-8c14-4d17-bd97-e597417ff67b.svg" height="20px" width="auto">) Image API.
+The background changes relatively to the location by using  Unsplash (<img src="https://user-images.githubusercontent.com/69706145/154615951-586230e4-8c14-4d17-bd97-e597417ff67b.svg" height="20px" width="auto">) Image API.
 
 <br/>
 <br/>
