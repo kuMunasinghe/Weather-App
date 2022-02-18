@@ -10,6 +10,7 @@ This simple weather build using <img src="https://img.shields.io/badge/HTML5-E34
 The background changes relatively location by using  Unsplash (<img src="https://user-images.githubusercontent.com/69706145/154615951-586230e4-8c14-4d17-bd97-e597417ff67b.svg" height="20px" width="auto">) Image API.
 
 
+Developed by Kasun Munasinghe<br/>
 <a href="https://www.linkedin.com/in/kumunasinghe/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a><br/>
 <a href="https://www.facebook.com/kasunudakara/"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/></a><br/>
 <a href="https://github.com/kuMunasinghe"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a><br/>
