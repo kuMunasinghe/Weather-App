@@ -4,19 +4,20 @@ body{
     align-items: center;
     height:100vh;
     margin:0;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     font-family: 'Open Sans', sans-serif;
     background-image: url(https://source.unsplash.com/random/1600x900/?landscape);
     font-size: 120%;
 }
 
 .card{
-    background: rgba(255, 255, 255, 0.671);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.548) 0%, rgba(255,255,255,0.6365896700477065) 0%, rgba(0,0,0,0.6250875350140056) 23%, rgba(0,0,0,0.6867121848739496) 84%, rgba(0,0,0,0.6531332526408451) 94%, rgba(0,0,0,0.6671043417366946) 100%);
     padding:2em;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
     margin:1em;
+    color: antiquewhite;
 }
 .search{
     display: flex;
@@ -40,7 +41,7 @@ input.search-bar{
     outline: none;
     border-radius: 24px;
     padding: 0.5em 1em;
-    background-color: #524c4c5b;
+    background-color: #ffffff5b;
     color: rgb(255, 255, 255);
     font-family: inherit;
     font-size: 120%;
@@ -83,3 +84,47 @@ h1.temp{
     bottom: 0;
     font-size: 0.9em;
 }
+
+@media only screen and (max-width: 450px) {
+    .card{
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.548) 0%, rgba(255,255,255,0.6365896700477065) 0%, rgba(0,0,0,0.6250875350140056) 23%, rgba(0,0,0,0.6867121848739496) 84%, rgba(0,0,0,0.6531332526408451) 94%, rgba(0,0,0,0.6671043417366946) 100%);
+        padding:3em;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 250px;
+        margin:1em;
+        color: antiquewhite;
+    }
+
+    input.search-bar{
+        border: none;
+        outline: none;
+        border-radius: 24px;
+        padding: 0.5em 1em;
+        background-color: #ffffff5b;
+        color: rgb(255, 255, 255);
+        font-family: inherit;
+        font-size: 120%;
+        width:150px;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:90vh;
+        margin:0;
+        background-color: rgb(255, 255, 255);
+        font-family: 'Open Sans', sans-serif;
+        background-image: url(https://source.unsplash.com/random/1600x900/?landscape);
+        font-size: 80%;
+    }
+    .footer{
+        color: rgb(255, 255, 255);
+        position:absolute;
+        bottom: 5px;
+        font-size: 0.9em;
+    }
+    
+
+  }
