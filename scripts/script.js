@@ -22,7 +22,7 @@ let weather={
         //console.log(name,description,icon,humidity,speed);
         document.querySelector(".city").innerText="Weather in "+name;
         document.querySelector(".temp").innerText=feels_like+" °C";
-        document.querySelector(".icon").src="http://openweathermap.org/img/wn/"+icon+".png"
+        document.querySelector(".icon").src="https://openweathermap.org/img/wn/"+icon+".png"
         document.querySelector(".description").innerText=description;
         document.querySelector(".direction").innerText="Wind direction: "+direction;
         document.querySelector(".wind").innerText="Wind speed: "+speed+"km/hr";
