@@ -2,10 +2,12 @@ let weather={
     apiKey:"51ef37e1efd21c35f024809b233c462e",
 
     fetchWeather: async function(city) {
+        console.info(city)
         try {
             const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey);
             if (!response.ok) {
-                weather.fetchWeather("colombo");;
+                document.querySelector(".error").innerText="🛑:: "+ city +" weather data not available."
+                this.fetchWeather("colombo");;
             }
             const data = await response.json();
             console.log("response status =", response.status);
@@ -56,36 +58,45 @@ document.querySelector(".search-bar")
 })
 
 
-async function get_city(){
-    if ("geolocation" in navigator) {
-        // Get the user's current location
-        navigator.geolocation.getCurrentPosition(async function(position) {
-            // The user's latitude and longitude are in position.coords.latitude and position.coords.longitude
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-    
-            console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-            console.log( await getCityName(latitude,longitude));
-        }, function(error) {
-            // Handle errors, if any
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    console.error("User denied the request for geolocation.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    console.error("Location information is unavailable.");
-                    break;
-                case error.TIMEOUT:
-                    console.error("The request to get user location timed out.");
-                    break;
-                case error.UNKNOWN_ERROR:
-                    console.error("An unknown error occurred.");
-                    break;
-            }
-        });
-    } else {
-        console.error("Geolocation is not available in this browser.");
-    }
+async function get_city() {
+    return new Promise((resolve, reject) => {
+        if ("geolocation" in navigator) {
+            // Get the user's current location
+            navigator.geolocation.getCurrentPosition(async function(position) {
+                // The user's latitude and longitude are in position.coords.latitude and position.coords.longitude
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+        
+                console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                try {
+                    const city = await getCityName(latitude, longitude);
+                    resolve(city);
+                } catch (error) {
+                    reject(error);
+                }
+            }, function(error) {
+                // Handle errors, if any
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        console.error("User denied the request for geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        console.error("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        console.error("The request to get user location timed out.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        console.error("An unknown error occurred.");
+                        break;
+                }
+                reject(error);
+            });
+        } else {
+            console.error("Geolocation is not available in this browser.");
+            reject(new Error("Geolocation is not available"));
+        }
+    });
 }
 
 
@@ -98,6 +109,7 @@ async function getCityName(latitude, longitude) {
         
         if (data.address && (data.address.city || data.address.town || data.address.village)) {
             // Try to get the city name from various address components
+            console.log("this is retun address")
             return data.address.city || data.address.town || data.address.village;
         } else {
             console.error("City name not found in the response.");
@@ -109,4 +121,13 @@ async function getCityName(latitude, longitude) {
     }
 }
 
-weather.fetchWeather(get_city());
+(async function() {
+    try {
+        let current_location = await get_city();
+        console.info("this is current location: " + current_location);
+        
+        await weather.fetchWeather(current_location);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+})();
